@@ -231,8 +231,10 @@ class FindMode extends Mode {
 
     // window.find focuses the |window| that it is called on. This gives us an opportunity to (re-)focus
     // another element/window, if that isn't the behaviour we want.
-    if (options.postFindFocus != null)
+    if (options.postFindFocus != null) {
       options.postFindFocus.focus();
+      options.postFindFocus.document.getElementById("hud-find-input").focus();
+    }
 
     if (options.colorSelection) {
       setTimeout(
